@@ -2,9 +2,6 @@
 
 This action create Windows Installer MSI files for the input exe file.
 
-## Precondition
-On Windows, Install Wix https://wixtoolset.org/
-
 ## Inputs
 
 ## exefile, required
@@ -15,9 +12,15 @@ what version to use for the built MSI, default is 0.0.1
 
 ## Outputs
 
-## eratoscli-win-64.msi and eratoscli-win-32.msi
-
-The Windows installation files for 64-bit and 32-bit Windows
+The Windows installation files for the input exe file
 
 ## Example usage
-uses: ./.github/action/build-msi
+
+```
+      - name: Build MSI for Windows
+        id: buildmsi
+        uses: ./action # Uses own action
+        with:
+          exefile: 'helloworld.exe'
+```
+a real example is here: https://github.com/AliceOh/Github-action-to-create-Windows-Installer-MSI-file
